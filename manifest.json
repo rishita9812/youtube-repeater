@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Video Timestamp repeater",
+  "version": "1.0",
+  "description": "### YouTube Video Timestamp repeater\n\n**Description:**\nYouTube Video Repeater is a handy Chrome extension that allows you to seamlessly loop a specific segment of any YouTube video. Whether you're learning a dance routine, studying a tutorial, or simply enjoying your favorite music, this extension lets you focus on the content that matters most.\n\n**Features:**\n- **Set Start and End Times:** Easily define the start and end times of the segment you want to repeat using intuitive input fields.\n- **Customizable Loop Count:** Specify how many times you want the segment to repeat, ensuring you get the perfect practice or enjoyment.\n- **Easy Controls:** Use keyboard shortcuts ('F' to set start time, 'E' to set end time, 'Q' to quit loop) for quick and efficient operation.\n- **Floating UI:** Access settings and controls conveniently with a floating button that stays visible on the right edge of your screen.\n- **Quick Setup:** Simply install the extension, navigate to any YouTube video, and start looping your desired segment with just a few clicks.\n\n**Instructions:**\n1. **Installation:**\n   - Install the YouTube Video Repeater extension from the Chrome Web Store.\n\n2. **Setting Up Loop:**\n   - Open any YouTube video.\n   - Use the floating button on the right side of the screen to access the settings panel.\n   - Input the start and end times of the segment you want to repeat in minutes and seconds.\n   - Specify how many times you want the segment to repeat.\n   - Click 'Set Loop' to start the loop based on your settings.\n\n3. **Controlling the Loop:**\n   - Press 'B' while watching the video to set the current playback time as the #Begin time.\n   - Press 'E' to set the current playback time as the #End time of the loop segment.\n   - Press 'Q' to #Quit the loop at any time.\n\n4. **Managing Settings:**\n   - Use the floating button to toggle visibility of the settings panel.\n   - Adjust start time, end time, and loop count as needed while watching the video.\n\n**Enjoy uninterrupted learning, practicing, and entertainment with YouTube Video Repeater!**",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    }
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
